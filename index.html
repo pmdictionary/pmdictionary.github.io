@@ -28,13 +28,16 @@ h2 {text-align:center;}
 small {display:block;}
 a.dark, a.dark:hover {color:black;font-weight:bold;}
 
+img {max-width:90vw;}
+
 header {background-color:var(--brand);color:black;padding:130px 10% 80px;text-align: center;}
 header .col {margin:0 auto;max-width:800px;}
 header img {display:block;margin:0 auto 40px;width:100%;}
 
-nav {background-color:black;font-size:22px;text-align:center;position:-webkit-sticky;position:sticky;top:0;z-index:1;}
+nav {background-color:black;font-size:22px;text-align:center;}
 nav a {color:white;display:inline-block;font-weight:bold;padding:10px;}
 nav a:hover {color:var(--brand);text-decoration:none;}
+@media (min-width:768px){nav {position:-webkit-sticky;position:sticky;top:0;z-index:1;}}
 
 #download {background:var(--soft-bg);position:relative;}
 #download .img {background:url(images/download.svg) 90% center no-repeat;background-size:200px;position:absolute;top:0;right:0;bottom:0;}
@@ -84,7 +87,7 @@ footer a, footer a:hover {color:var(--brand);}
 				<p><strong>Published:</strong> <span class="published">see change-log</span></p>
 			</div>
 
-			<button class="btn btn-warning btn-lg px-3" href="file:dictionary.zip" download="PM-Reference.dictionary-v1.1.zip" aria-described-by><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download<span class="release"></span> for Mac</button><a id="legal" href="#disclaimer" class="ml-5">Legal<i class="far fa-angle-down ml-2" aria-label="show disclaimer"></i></a>
+			<button class="btn btn-warning btn-lg px-3" href="dictionary.zip" download="PM-Reference.dictionary-v1.1.zip" aria-described-by><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download<span class="release"></span> for Mac</button><a id="legal" href="#disclaimer" class="ml-5">Legal<i class="far fa-angle-down ml-2" aria-label="show disclaimer"></i></a>
 		</div>
 	</section>
 	<section id="installation" class="row py-5">
