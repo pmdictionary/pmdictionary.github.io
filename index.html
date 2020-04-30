@@ -1,28 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Product Management Dictionary</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<meta property='og:image' content='images/preview.png'/>
+
+<!-- Content -->
+<meta name="author" content="Honor.Software">
+<meta name="description" content="A community-sourced reference dictionary for software terms">
+<meta name="keywords" content="product,product management,ux design,ux terms,pm terms,software terms,software dictionary, software acronyms,ux acronyms,acronyms,product design,software terminology">
+<meta name="format-detection" content="telephone=no">
+
+<!-- Libraries -->
+<!-- bootstrap --><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- font-awesome --><script src="https://kit.fontawesome.com/6108e81142.js" crossorigin="anonymous"></script>
+
 <style type="text/css">
 :root {
-	--text:#000000;
-	--bg:#ffffff;
+	--brand:#ffdc68;
+	--text:#000;
+	--bg:#fff;
+	--soft-bg:#eee;
+	--invert-bg:#333;
 }
+body {background:var(--bg);color:var(--text);}
+header {background-color:var(--brand);color:#000;padding:130px 10% 80px;text-align: center;}
+header .col {margin:0 auto;max-width:800px;}
+header img {display:block;margin:0 auto 40px;width:100%;}
+header small {display:block;}
 
+nav {background-color:#000;font-size:22px;text-align:center;}
+nav a {color:#fff;display:inline-block;font-weight:bold;padding:10px;}
+nav a:hover {color:var(--brand);text-decoration:none;}
+
+#download {background:var(--soft-bg);position:relative;}
+#download .img {background:url(images/download.svg) 90% center no-repeat;background-size:200px;position:absolute;top:0;right:0;bottom:0;}
+@media (min-width:768px){#download .img {background-position:center;position:static;}}
+#apple-logo {margin-right:.65rem;}
 
 @media (prefers-color-scheme:dark){
 /*DARK MODE STYLES*/
 :root {
-	--text:#ffffff;
-	--bg:#000000;
+	--text:#fff;
+	--bg:#000;
+	--soft-bg:#2b2b2b;
 }
 }
 </style>
 </head>
-<body>
-	<img src="images/pm-dictionary.svg" alt="logo"/>
-
-	<h1>Product Management Dictionary</h1>
-	<p>A community-sourced reference dictionary for (Software) Product Management related terms.</p>
+<body class="container-fluid">
+	<header class="row"><div class="col">
+		<img src="images/pm-dictionary.svg" alt="Product Management Dictionary"/>
+		<h3>A community-sourced reference dictionary<small>(for software terms)</small></h3>
+	</div></header>
+	<nav class="row row-cols-1 row-cols-md-4 justify-content-around">
+		<div class="d-none d-md-inline-block col-md-1"></div>
+		<a class="col col-md-auto" href="#download">Download</a>
+		<a class="col col-md-auto" href="#setup">Install</a>
+		<a class="col col-md-auto" href="#contribute">Contribute</a>
+		<a class="col col-md-auto" href="#about">About</a>
+		<div class="d-none d-md-inline-block col-md-1"></div>
+	</nav>
+	<section id="download" class="row justify-content-center py-5">
+		<div class="img col-md-4 col-lg-3 py-4 py-md-5"><!-- zip folder icon --></div>
+		<div class="col-11 col-sm-10 col-md-6 col-lg-5 py-4 py-md-5">
+			<h3>Download The Dictionary</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<a class="btn btn-warning btn-lg" href="file:dictionary.zip" download="PM-Reference.dictionary-v1.1.zip"><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download for Mac</a>
+		</div>
+	</section>
+	<section class="row">
+		<h3>Installation</h3>
+		<div class="col-12 col-md-6">
+			<!-- background graphic -->
+		</div>
+		<div class="col-12 col-md-6">
+			<h3>Installation</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<a class="btn btn-primary" href="/news/">Read the article</a>
+		</div>
+	</section>
 </body>
 </html>
