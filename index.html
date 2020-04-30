@@ -25,10 +25,12 @@
 	--invert-bg:#333;
 }
 body {background:var(--bg);color:var(--text);}
+h2 {text-align:center;}
+small {display:block;}
+
 header {background-color:var(--brand);color:#000;padding:130px 10% 80px;text-align: center;}
 header .col {margin:0 auto;max-width:800px;}
 header img {display:block;margin:0 auto 40px;width:100%;}
-header small {display:block;}
 
 nav {background-color:#000;font-size:22px;text-align:center;}
 nav a {color:#fff;display:inline-block;font-weight:bold;padding:10px;}
@@ -38,6 +40,8 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 #download .img {background:url(images/download.svg) 90% center no-repeat;background-size:200px;position:absolute;top:0;right:0;bottom:0;}
 @media (min-width:768px){#download .img {background-position:center;position:static;}}
 #apple-logo {margin-right:.65rem;}
+
+footer {text-align:center;}
 
 @media (prefers-color-scheme:dark){
 /*DARK MODE STYLES*/
@@ -67,19 +71,90 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 		<div class="col-11 col-sm-10 col-md-6 col-lg-5 py-4 py-md-5">
 			<h3>Download The Dictionary</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			<a class="btn btn-warning btn-lg" href="file:dictionary.zip" download="PM-Reference.dictionary-v1.1.zip"><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download for Mac</a>
+
+			<div id="releaseInfo d-none">
+				<p><strong>Latest Release:</strong> <span class="release">see change-log</span></p>
+				<p><strong>Published:</strong> <span class="published">see change-log</span></p>
+			</div>
+
+			<button class="btn btn-warning btn-lg px-3" href="file:dictionary.zip" download="PM-Reference.dictionary-v1.1.zip" aria-described-by><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download<span class="release"></span> for Mac</button><a id="legal" href="#disclaimer" class="ml-5">Legal<i class="far fa-angle-down ml-2" aria-label="show disclaimer"></i></a>
 		</div>
 	</section>
-	<section class="row">
-		<h3>Installation</h3>
-		<div class="col-12 col-md-6">
-			<!-- background graphic -->
+	<section id="installation" class="row py-5">
+		<h2 class="col-12 pt-5">Installation Instructions</h2>
+		<div class="col-12">
+			<h4>Step 1</h4>
+			<p>Download the <b>Dictionary file</b> 👆</p>
+
+			<h4>Step 2</h4>
+			<p>Open a Finder window and press <strong>⇧⌘G</strong> (<code>Shift</code>+<code>Command</code>+<code>G</code>) to open the 'Go to Folder...' window</p>
+			<p>You can also access this window by opening Finder and selecting it from the top menu: <strong>Go</strong> &lt; <strong>Go to Folder...</strong><br><img src="tutorial-images/goto-foloder.png" alt="Go to Folder..." />
+
+			<h4 id="step-3">Step 3</h4>
+			<p>Navigate to the Dictionary Folder at this path: <code>~/Library/Dictionaries/</code><img src="tutorial-images/dictionary-folder.png" alt="Dictionary Folder" /></p>
+
+			<h4>Step 4</h4>
+			<p>Drag the downloaded dictionary file into the folder<br><img src="tutorial-images/drag-to-folder.jpeg" alt="Drag the downloaded file to the folder" /></p>
+
+			<h4>Step 5</h4>
+			<p>Open the <strong>Dictionary</strong> app<br><img src="tutorial-images/dictionary.png" alt="Open Dictionary" /></p>
+
+			<h4>Step 6</h4>
+			<p>Open the <strong>Preference</strong> window<br><img src="tutorial-images/dictionary-preferences.png" alt="Preference window" /></p>
+
+			<h4>Step 7</h4>
+			<p>Scroll to the bottom of the 'Sources' list at the top of the <strong>Preferences</strong> window and check the box next to <strong>PM Reference</strong><br><img src="tutorial-images/preferences.jpeg" alt="Preferences" /></p>
+
+			<h4>Step 8</h4>
+			<p>You can now close the <strong>Preferences</strong>, <strong>Dictionary</strong>, and <strong>Finder</strong> windows</p>
 		</div>
-		<div class="col-12 col-md-6">
-			<h3>Installation</h3>
+	</section>
+	<section id="uninstall" class="row">
+		<h2 class="col-12">UN-Install</h2>
+		<div class="col-12 col-md-6 col-lg-8">
+			<h4>Need help removing the Product Management Dictionary?</h4>
+			<p>The process couldn't be simpler - just open the 'Dictionaries' folder on your computer (see <a href="#step-3">step 3</a> above), select the file called <code>PM Reference.dictionary</code> and either drag it to the trash or <code>right-click</code> and select <code>Move to Trash</code>.</p>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4">
+			<!-- "move to trash" graphic -->
+		</div>
+	</section>
+	<section id="contribute" class="row">
+		<h2 class="col-12">Contributing to the Dictionary</h2>
+		<div class="col-12">
+			<h4>New terms</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			<a class="btn btn-primary" href="/news/">Read the article</a>
+			<h4>Corrections</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		</div>
 	</section>
+	<section id="about" class="row">
+		<h2 class="col-12">About</h2>
+		<div class="col-12">
+			<h4>Origin</h4>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<h4 id="disclaimer">Legal Disclaimers</h4>
+			<p>This software released under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC-BY-NC-ND 4.0 International License</a> and is offered free of charge and without warranties of any kind.</p>
+			<p>By downloading, using, or sharing this utility, you agree to indemnify, defend and hold harmless Honor Software, its officers, directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable attorneys' fees) relating to or arising out of your use of or inability to use this site and any product or services offered.</p>
+		</div>
+	</section>
+	<footer class="row justify-content-center">
+		<div class="col-11">
+		<p><a href="http://honor.software" target="_blank">Honor Software</a> &copy; <span id="copyright-year">2020</span></p>
+	</footer>
+<script type="text/javascript">
+var latestRelease = 'v1.1';
+var releaseLabels = document.querySelectorAll('.release');
+for (var i = 0; i < releaseLabels.length; i++) {
+	releaseLabels[i].innerHTML = ' '+latestRelease;
+}
+
+var pubDate = 'Jan 20, 2020';
+document.querySelector('.published').innerHTML = ' '+pubDate;
+
+/* TODO: Update latestRelease and pubDate to pull from change-log */
+
+document.querySelector('#copyright-year').innerHTML = new Date().getFullYear();
+</script>
 </body>
 </html>
