@@ -44,8 +44,6 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 @media (min-width:768px){#download .img {background-position:center;position:static;}}
 #apple-logo {margin-right:.65rem;}
 
-#uninstall {background-color:var(--brand);color:black;}
-#uninstall code {background-color:white;border-radius:2px;display:inline-block;font-size:0.8em;padding:1px 4px;margin:0 1px;}
 
 #contributing {}
 
@@ -59,8 +57,7 @@ footer a, footer a:hover {color:var(--brand);}
 	--text:#fff;
 	--bg:#000;
 	--soft-bg:#2b2b2b;
-}
-}
+}}
 </style>
 </head>
 <body class="container-fluid">
@@ -71,7 +68,7 @@ footer a, footer a:hover {color:var(--brand);}
 	<nav class="row row-cols-1 row-cols-md-4 justify-content-around">
 		<div class="d-none d-md-inline-block col-md-1"></div>
 		<a class="col col-md-auto" href="#download">Download</a>
-		<a class="col col-md-auto" href="#installation">Install</a>
+		<a class="col col-md-auto" href="setup.html#setup">Setup</a>
 		<a class="col col-md-auto" href="#contribute">Contribute</a>
 		<a class="col col-md-auto" href="#about">About</a>
 		<div class="d-none d-md-inline-block col-md-1"></div>
@@ -88,45 +85,6 @@ footer a, footer a:hover {color:var(--brand);}
 			</div>
 
 			<a class="btn btn-warning btn-lg px-3" href="dictionary.zip" download="PM-Reference-Dictionary-v1.1.zip" aria-described-by><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download<span class="release"></span> for Mac</a><a id="legal" href="#disclaimer" class="ml-5">Legal<i class="far fa-angle-down ml-2" aria-label="show disclaimer"></i></a>
-		</div>
-	</section>
-	<section id="installation" class="row py-5">
-		<h2 class="col-12 pt-5">Installation Instructions</h2>
-		<div class="col-12">
-			<h4>Step 1</h4>
-			<p>Download the <b>Dictionary file</b> 👆</p>
-
-			<h4>Step 2</h4>
-			<p>Open a Finder window and press <strong>⇧⌘G</strong> (<code>Shift</code>+<code>Command</code>+<code>G</code>) to open the 'Go to Folder...' window</p>
-			<p>You can also access this window by opening Finder and selecting it from the top menu: <strong>Go</strong> &lt; <strong>Go to Folder...</strong><br><img src="tutorial-images/goto-foloder.png" alt="Go to Folder..." />
-
-			<h4>Step 3</h4>
-			<p>Navigate to the Dictionary Folder at this path: <code>~/Library/Dictionaries/</code><img src="tutorial-images/dictionary-folder.png" alt="Dictionary Folder" /></p>
-
-			<h4>Step 4</h4>
-			<p>Drag the downloaded dictionary file into the folder<br><img src="tutorial-images/drag-to-folder.jpeg" alt="Drag the downloaded file to the folder" /></p>
-
-			<h4>Step 5</h4>
-			<p>Open the <strong>Dictionary</strong> app<br><img src="tutorial-images/dictionary.png" alt="Open Dictionary" /></p>
-
-			<h4>Step 6</h4>
-			<p>Open the <strong>Preference</strong> window<br><img src="tutorial-images/dictionary-preferences.png" alt="Preference window" /></p>
-
-			<h4>Step 7</h4>
-			<p>Scroll to the bottom of the 'Sources' list at the top of the <strong>Preferences</strong> window and check the box next to <strong>PM Reference</strong><br><img src="tutorial-images/preferences.jpeg" alt="Preferences" /></p>
-
-			<h4>Step 8</h4>
-			<p>You can now close the <strong>Preferences</strong>, <strong>Dictionary</strong>, and <strong>Finder</strong> windows</p>
-		</div>
-	</section>
-	<section id="uninstall" class="row py-5">
-		<h2 class="col-12">UN-Install</h2>
-		<div class="col-12 col-md-6 col-lg-8">
-			<h4>Need help removing the Product Management Dictionary?</h4>
-			<p>The process couldn't be simpler - just open the '<strong>Dictionaries</strong>' folder on your computer (see <a href="#installation" class="dark">Steps 2 & 3</a> above), select the file called <code>PM Reference.dictionary</code> and either drag it to the trash or <code>right-click</code> and select <code>Move to Trash</code>.</p>
-		</div>
-		<div class="col-12 col-md-6 col-lg-4">
-			<img class="hidden" src="tutorial-images/move-to-trash.png" alt="move to trash" />
 		</div>
 	</section>
 	<section id="contribute" class="row py-5">
@@ -148,9 +106,11 @@ footer a, footer a:hover {color:var(--brand);}
 			<p>By downloading, using, or sharing this utility, you agree to indemnify, defend and hold harmless Honor Software, its officers, directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable attorneys' fees) relating to or arising out of your use of or inability to use this site and any product or services offered.</p>
 		</div>
 	</section>
-	<footer class="row py-4">
-		<div class="col-12">
-		<p class="m-0">&copy; <span id="copyright-year">2020</span> <a href="http://honor.software" target="_blank">Honor.Software</a></p>
+	<footer class="row py-4 justify-content-between">
+		<div class="col-auto">
+			<p class="m-0">&copy; <span id="copyright-year">2020</span> <a href="http://honor.software" target="_blank">Honor.Software</a></p>
+		</div>
+		<div class="col-auto"><p class="m-0"><a href="#disclaimer">License</a></p></div>
 	</footer>
 <script type="text/javascript">
 var latestRelease = 'v1.1';
