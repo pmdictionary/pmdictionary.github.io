@@ -22,24 +22,33 @@
 	--text:#000;
 	--bg:#fff;
 	--soft-bg:#eee;
-	--invert-bg:#333;
 }
 body {background:var(--bg);color:var(--text);}
 h2 {text-align:center;}
 small {display:block;}
+a.dark, a.dark:hover {color:black;font-weight:bold;}
 
-header {background-color:var(--brand);color:#000;padding:130px 10% 80px;text-align: center;}
+header {background-color:var(--brand);color:black;padding:130px 10% 80px;text-align: center;}
 header .col {margin:0 auto;max-width:800px;}
 header img {display:block;margin:0 auto 40px;width:100%;}
 
-nav {background-color:#000;font-size:22px;text-align:center;position:-webkit-sticky;position:sticky;top:0;z-index:1;}
-nav a {color:#fff;display:inline-block;font-weight:bold;padding:10px;}
+nav {background-color:black;font-size:22px;text-align:center;position:-webkit-sticky;position:sticky;top:0;z-index:1;}
+nav a {color:white;display:inline-block;font-weight:bold;padding:10px;}
 nav a:hover {color:var(--brand);text-decoration:none;}
 
 #download {background:var(--soft-bg);position:relative;}
 #download .img {background:url(images/download.svg) 90% center no-repeat;background-size:200px;position:absolute;top:0;right:0;bottom:0;}
 @media (min-width:768px){#download .img {background-position:center;position:static;}}
 #apple-logo {margin-right:.65rem;}
+
+#uninstall {background-color:var(--brand);}
+#uninstall code {background-color:white;border-radius:2px;display:inline-block;font-size:0.8em;padding:1px 4px;margin:0 1px;}
+
+#contributing {}
+
+#about {background-color:var(--soft-bg);}
+footer {background-color:black;color:white;}
+footer a, footer a:hover {color:var(--brand);}
 
 @media (prefers-color-scheme:dark){
 /*DARK MODE STYLES*/
@@ -88,7 +97,7 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 			<p>Open a Finder window and press <strong>⇧⌘G</strong> (<code>Shift</code>+<code>Command</code>+<code>G</code>) to open the 'Go to Folder...' window</p>
 			<p>You can also access this window by opening Finder and selecting it from the top menu: <strong>Go</strong> &lt; <strong>Go to Folder...</strong><br><img src="tutorial-images/goto-foloder.png" alt="Go to Folder..." />
 
-			<h4 id="step-3">Step 3</h4>
+			<h4>Step 3</h4>
 			<p>Navigate to the Dictionary Folder at this path: <code>~/Library/Dictionaries/</code><img src="tutorial-images/dictionary-folder.png" alt="Dictionary Folder" /></p>
 
 			<h4>Step 4</h4>
@@ -107,17 +116,17 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 			<p>You can now close the <strong>Preferences</strong>, <strong>Dictionary</strong>, and <strong>Finder</strong> windows</p>
 		</div>
 	</section>
-	<section id="uninstall" class="row">
+	<section id="uninstall" class="row py-5">
 		<h2 class="col-12">UN-Install</h2>
 		<div class="col-12 col-md-6 col-lg-8">
 			<h4>Need help removing the Product Management Dictionary?</h4>
-			<p>The process couldn't be simpler - just open the 'Dictionaries' folder on your computer (see <a href="#step-3">step 3</a> above), select the file called <code>PM Reference.dictionary</code> and either drag it to the trash or <code>right-click</code> and select <code>Move to Trash</code>.</p>
+			<p>The process couldn't be simpler - just open the '<strong>Dictionaries</strong>' folder on your computer (see <a href="#installation" class="dark">Steps 2 & 3</a> above), select the file called <code>PM Reference.dictionary</code> and either drag it to the trash or <code>right-click</code> and select <code>Move to Trash</code>.</p>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4">
 			<!-- "move to trash" graphic -->
 		</div>
 	</section>
-	<section id="contribute" class="row">
+	<section id="contribute" class="row py-5">
 		<h2 class="col-12">Contributing to the Dictionary</h2>
 		<div class="col-12">
 			<h4>New terms</h4>
@@ -126,7 +135,7 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		</div>
 	</section>
-	<section id="about" class="row">
+	<section id="about" class="row py-5">
 		<h2 class="col-12">About</h2>
 		<div class="col-12">
 			<h4>Origin</h4>
@@ -136,9 +145,9 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 			<p>By downloading, using, or sharing this utility, you agree to indemnify, defend and hold harmless Honor Software, its officers, directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable attorneys' fees) relating to or arising out of your use of or inability to use this site and any product or services offered.</p>
 		</div>
 	</section>
-	<footer class="row">
+	<footer class="row py-4">
 		<div class="col-12">
-		<p>&copy; <span id="copyright-year">2020</span> <a href="http://honor.software" target="_blank">Honor Software</a></p>
+		<p class="m-0">&copy; <span id="copyright-year">2020</span> <a href="http://honor.software" target="_blank">Honor Software</a></p>
 	</footer>
 <script type="text/javascript">
 var latestRelease = 'v1.1';
