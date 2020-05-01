@@ -28,11 +28,12 @@ h2 {text-align:center;}
 small {display:block;}
 a.dark, a.dark:hover {color:black;font-weight:bold;}
 
-img {max-width:90vw;}
+img {max-width:100%;border-radius:5px;}
+img.shadow {box-shadow:0 6px 23px 0px rgba(0,0,0,0.35)!important;}
 
 header {background-color:var(--brand);color:black;padding:130px 10% 80px;text-align: center;}
 header .col {margin:0 auto;max-width:800px;}
-header img {display:block;margin:0 auto 40px;width:100%;}
+header img {display:block;margin:0 auto 40px;width:100%;max-width:unset;}
 
 nav {background-color:black;font-size:22px;text-align:center;}
 nav a {color:white;display:inline-block;font-weight:bold;padding:10px;}
@@ -40,8 +41,12 @@ nav a:hover {color:var(--brand);text-decoration:none;}
 @media (min-width:768px){nav {position:-webkit-sticky;position:sticky;top:0;z-index:1;}}
 
 #setup {background:var(--soft-bg);position:relative;}
+#setup h2 {text-align:left;}
 
-#uninstall {background-color:var(--brand);color:black;}
+#install .step {border-top:1px solid #aaa;}
+#install .step:nth-of-type(even) {background-color:var(--soft-bg);}
+#install .finished {background-color:var(--brand);color:black;}
+
 #uninstall code {background-color:white;border-radius:2px;display:inline-block;font-size:0.8em;padding:1px 4px;margin:0 1px;}
 
 footer {background-color:black;color:white;}
@@ -58,7 +63,7 @@ footer a, footer a:hover {color:var(--brand);}
 </head>
 <body class="container-fluid">
 	<header class="row"><div class="col">
-		<img src="images/pm-dictionary.svg" alt="Product Management Dictionary"/>
+		<img src="page-assets/pm-dictionary.svg" alt="Product Management Dictionary"/>
 		<h3>A community-sourced reference dictionary<small>(for software terms)</small></h3>
 	</div></header>
 	<nav class="row row-cols-1 row-cols-md-4 justify-content-around">
@@ -69,49 +74,111 @@ footer a, footer a:hover {color:var(--brand);}
 		<a class="col col-md-auto" href="index.html#about">About</a>
 		<div class="d-none d-md-inline-block col-md-1"></div>
 	</nav>
-	<section id="setup" class="row py-5">
-		<div class="col-12 py-5">
-			<h2>Getting Started</h2>
+	<section id="setup" class="row py-5 align-items-center">
+		<div class="col-12 col-md-5 py-4 offset-md-1">
+			<img src="page-assets/latest-preview.png" alt="Dictionary Preview" class="shadow"/>
+		</div>
+		<div class="col-12 col-md-5 py-5 pl-md-4">
+			<h2 class="mb-3">Getting Started</h2>
 			<p>Use the steps below to set up the Product Management Dictionary on your computer.</p>
 			<p>Instructions for <a href="#uninstall">upgrading or removing</a> the dictionary are at the bottom of the page.</p>
 		</div>
 	</section>
-	<section id="install" class="row py-5">
-		<h2 class="col-12 pt-5">Installation</h2>
-		<div class="col-12">
-			<h4>Step 1</h4>
-			<p>Download the <a class="btn btn-warning btn-lg px-3" href="file:dictionary.zip" download="PM-Reference.dictionary-v1.1.zip" aria-described-by><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download<span class="release"></span> for Mac</a></p>
+	<section id="install" class="pt-5">
+		<div class="row">
+			<h2 class="col-12 pt-5 pb-4">Installation</h2>
+		</div>
 
-			<h4>Step 2</h4>
-			<p>Open a Finder window and press <strong>⇧⌘G</strong> (<code>Shift</code>+<code>Command</code>+<code>G</code>) to open the 'Go to Folder...' window</p>
-			<p>You can also access this window by opening Finder and selecting it from the top menu: <strong>Go</strong> &lt; <strong>Go to Folder...</strong><br><img src="tutorial-images/goto-foloder.png" alt="Go to Folder..." />
+		<div class="row py-4 step align-items-center">
+			<h4 class="col-12 col-sm-auto mb-sm-0">Step 1</h4>
+			<div class="col-12 col-sm-9">
+				<p class="mb-sm-0">Download the <a href="file:dictionary.zip" download="PM-Reference.dictionary-v1.1.zip" aria-described-by>Download the dictionary file</a></p>
+			</div>
+		</div>
 
-			<h4>Step 3</h4>
-			<p>Navigate to the Dictionary Folder at this path: <code>~/Library/Dictionaries/</code><img src="tutorial-images/dictionary-folder.png" alt="Dictionary Folder" /></p>
+		<div class="row py-4 step">
+			<h4 class="col-12 col-sm-auto">Step 2</h4>
+			<div class="col-12 col-sm-5">
+				<p>Open a Finder window and press <strong>⇧⌘G</strong> (<code>Shift</code>+<code>Command</code>+<code>G</code>) to open the 'Go to Folder...' window</p>
+				<p>You can also access this window by opening Finder and selecting it from the top menu: <strong>Go</strong> &lt; <strong>Go to Folder...</strong></p>
+			</div>
+			<aside class="col pr-md-4">
+				<img src="tutorial-images/goto-foloder.png" alt="Go to Folder..." />
+			</aside>
+		</div>
 
-			<h4>Step 4</h4>
-			<p>Drag the downloaded dictionary file into the folder<br><img src="tutorial-images/drag-to-folder.jpeg" alt="Drag the downloaded file to the folder" /></p>
+		<div class="row py-4 step">
+			<h4 class="col-12 col-sm-auto">Step 3</h4>
+			<div class="col-12 col-sm-5">
+				<p>Navigate to the Dictionary Folder at this path: <code>~/Library/Dictionaries/</code></p>
+			</div>
+			<aside class="col pr-md-4">
+				<img src="tutorial-images/dictionary-folder.png" alt="Dictionary Folder" />
+			</aside>
+		</div>
 
-			<h4>Step 5</h4>
-			<p>Open the <strong>Dictionary</strong> app<br><img src="tutorial-images/dictionary.png" alt="Open Dictionary" /></p>
+		<div class="row py-4 step">
+			<h4 class="col-12 col-sm-auto">Step 4</h4>
+			<div class="col-12 col-sm-5">
+				<p>Drag the downloaded dictionary file into the folder</p>
+			</div>
+			<aside class="col pr-md-4">
+				<img src="tutorial-images/drag-to-folder.jpeg" alt="Drag the downloaded file to the folder" />
+			</aside>
+		</div>
 
-			<h4>Step 6</h4>
-			<p>Open the <strong>Preference</strong> window<br><img src="tutorial-images/dictionary-preferences.png" alt="Preference window" /></p>
+		<div class="row py-4 step">
+			<h4 class="col-12 col-sm-auto">Step 5</h4>
+			<div class="col-12 col-sm-5">
+				<p>Open the <strong>Dictionary</strong> app</p>
+			</div>
+			<aside class="col pr-md-4">
+				<img src="tutorial-images/dictionary.png" alt="Open Dictionary" />
+			</aside>
+		</div>
 
-			<h4>Step 7</h4>
-			<p>Scroll to the bottom of the 'Sources' list at the top of the <strong>Preferences</strong> window and check the box next to <strong>PM Reference</strong><br><img src="tutorial-images/preferences.jpeg" alt="Preferences" /></p>
+		<div class="row py-4 step">
+			<h4 class="col-12 col-sm-auto">Step 6</h4>
+			<div class="col-12 col-sm-5">
+				<p>Open the <strong>Preference</strong> window</p>
+			</div>
+			<aside class="col pr-md-4">
+				<img src="tutorial-images/dictionary-preferences.png" alt="Preference window" />
+			</aside>
+		</div>
 
-			<h4>Step 8</h4>
-			<p>You can now close the <strong>Preferences</strong>, <strong>Dictionary</strong>, and <strong>Finder</strong> windows</p>
+		<div class="row py-4 step">
+			<h4 class="col-12 col-sm-auto">Step 7</h4>
+			<div class="col-12 col-sm-5">
+				<p>Scroll to the bottom of the 'Sources' list at the top of the <strong>Preferences</strong> window and check the box next to <strong>PM Reference</strong></p>
+			</div>
+			<aside class="col pr-md-4">
+				<img src="tutorial-images/preferences.jpeg" alt="Preferences" />
+			</aside>
+		</div>
+
+		<div class="row py-4 step align-items-center">
+			<h4 class="col-12 col-sm-auto mb-sm-0">Step 8</h4>
+			<div class="col-12 col-sm-9">
+				<p class="mb-sm-0">You can now close the <strong>Preferences</strong>, <strong>Dictionary</strong>, and <strong>Finder</strong> windows</p>
+			</div>
+		</div>
+
+		<div class="row finished">
+			<h2 class="col-12 py-5 m-0">
+				<span class="d-block d-md-inline-block">🎉 🎊 🎉 🎊 🎉</span>
+				<span class="d-block d-md-inline-block my-4 my-md-0 mx-md-4">Finished</span>
+				<span class="d-block d-md-inline-block">🎉 🎊 🎉 🎊 🎉</span>
+			</h2>
 		</div>
 	</section>
-	<section id="uninstall" class="row py-5">
-		<h2 class="col-12">Upgrading and Removing</h2>
+		<section id="uninstall" class="row py-5">
+		<h2 class="col-12 py-3">Upgrades &amp; Removal</h2>
 		<div class="col-12 col-md-6 col-lg-8">
 			<h4>Need help upgrading or removing the Product Management Dictionary?</h4>
 			<p>The process couldn't be simpler:</p>
-			<p><strong>Removing the dictionary</strong>: Just open the '<strong>Dictionaries</strong>' folder on your computer (see <a href="#installation" class="dark">Steps 2 & 3</a> above), select the file called <code>PM Reference.dictionary</code> and either drag it to the trash or <code>right-click</code> and select <code>Move to Trash</code>.</p>
-			<p><strong>Upgrading the dictionary</strong>: Follow the 'Removing the dictionary' steps above to remove your old version, then <a href="index.html#download">download the new version</a>, and install it using <a href="#install">the instructions</a> at the top of the page</p>
+			<p><strong>Removing the dictionary</strong>:<br />Just open the '<strong>Dictionaries</strong>' folder on your computer (see <a href="#installation" class="dark">Steps 2 & 3</a> above), select the file called <code>PM Reference.dictionary</code> and either drag it to the trash or <code>right-click</code> and select <code>Move to Trash</code>.</p>
+			<p><strong>Upgrading the dictionary</strong>:<br />Follow the 'Removing the dictionary' steps above to remove your old version, then <a href="index.html#download" class="dark">download the new version</a>, and install it using <a href="#install" class="dark">the instructions</a> at the top of the page</p>
 		</div>
 		<div class="col-12 col-md-6 col-lg-4">
 			<img class="hidden" src="tutorial-images/move-to-trash.png" alt="move to trash" />
@@ -124,17 +191,6 @@ footer a, footer a:hover {color:var(--brand);}
 		<div class="col-auto"><p class="m-0"><a href="index.html#disclaimer">License</a></p></div>
 	</footer>
 <script type="text/javascript">
-var latestRelease = 'v1.1';
-var releaseLabels = document.querySelectorAll('.release');
-for (var i = 0; i < releaseLabels.length; i++) {
-	releaseLabels[i].innerHTML = ' '+latestRelease;
-}
-
-var pubDate = 'Jan 20, 2020';
-document.querySelector('.published').innerHTML = ' '+pubDate;
-
-/* TODO: Update latestRelease and pubDate to pull from change-log */
-
 document.querySelector('#copyright-year').innerHTML = new Date().getFullYear();
 </script>
 </body>
