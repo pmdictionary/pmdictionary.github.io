@@ -28,26 +28,23 @@ h2 {text-align:center;}
 small {display:block;}
 a.dark, a.dark:hover {color:black;font-weight:bold;}
 
-img {max-width:90vw;}
+img {max-width:100%;border-radius:5px;}
+img.shadow {box-shadow:0 6px 23px 0px rgba(0,0,0,0.35)!important;}
 
-header {background-color:var(--brand);color:black;padding:130px 10% 80px;text-align: center;}
+.highlight {background-color:var(--brand);color:black;}
+
+header {background-color:var(--brand);color:black;padding:130px 10% 80px;text-align:center;}
 header .col {margin:0 auto;max-width:800px;}
-header img {display:block;margin:0 auto 40px;width:100%;}
+header img {display:block;margin:0 auto 40px;width:100%;max-width:unset;}
 
 nav {background-color:black;font-size:22px;text-align:center;}
 nav a {color:white;display:inline-block;font-weight:bold;padding:10px;}
 nav a:hover {color:var(--brand);text-decoration:none;}
 @media (min-width:768px){nav {position:-webkit-sticky;position:sticky;top:0;z-index:1;}}
 
-#download {background:var(--soft-bg);position:relative;}
-#download .img {background:url(page-assets/download.svg) 90% center no-repeat;background-size:200px;position:absolute;top:0;right:0;bottom:0;}
-@media (min-width:768px){#download .img {background-position:center;position:static;}}
-#apple-logo {margin-right:.65rem;}
+.step {border-top:1px solid #aaa;}
+.step:nth-of-type(even) {background-color:var(--soft-bg);}
 
-
-#contributing {}
-
-#about {background-color:var(--soft-bg);}
 footer {background-color:black;color:white;}
 footer a, footer a:hover {color:var(--brand);}
 
@@ -58,11 +55,23 @@ footer a, footer a:hover {color:var(--brand);}
 	--bg:#000;
 	--soft-bg:#2b2b2b;
 }}
+/* END SHARED STYLES */
+
+#download {background:var(--soft-bg);position:relative;}
+#download .img {background:url(page-assets/download.svg) 90% center no-repeat;background-size:200px;position:absolute;top:0;right:0;bottom:0;}
+@media (min-width:768px){#download .img {background-position:center;position:static;}}
+#apple-logo {margin-right:.65rem;}
+
+#usage img {max-width:100%;}
+
+#contributing {}
+
+#about {background-color:var(--soft-bg);}
 </style>
 </head>
 <body class="container-fluid">
 	<header class="row"><div class="col">
-		<img src="page-assets/pm-dictionary.svg" alt="Product Management Dictionary"/>
+		<a href="index.html"><img src="page-assets/pm-dictionary.svg" alt="Product Management Dictionary"/></a>
 		<h3>A community-sourced reference dictionary<small>(for software terms)</small></h3>
 	</div></header>
 	<nav class="row row-cols-1 row-cols-md-4 justify-content-around">
@@ -128,14 +137,16 @@ footer a, footer a:hover {color:var(--brand);}
 		<div class="col-12 col-md-5">
 			<h4>New terms</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+		</div>
+		<div class="col-12 col-md-5">
 			<h4>Corrections</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 		</div>
 	</section>
-	<section id="about" class="row py-5">
+	<section id="about" class="row py-5 justify-content-around">
 		<h2 class="col-12">About</h2>
-		<div class="col-12">
-			<h4>Origin</h4>
+		<div class="col-11">
+			<h4>Acknowledgments</h4>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 			<h4 id="disclaimer">Legal Disclaimers</h4>
 			<p>This software released under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC-BY-NC-ND 4.0 International License</a> and is offered free of charge and without warranties of any kind.</p>
@@ -167,10 +178,6 @@ document.querySelector('#copyright-year').innerHTML = new Date().getFullYear();
 
 <!-- <img src="screenshots/latest-preview.png" alt="PM Reference v1.1" />
 
-## HOW TO USE
-1. Look up terms in the **Dictionary** app<br><img src="tutorial-images/dictionary-after.jpeg" alt="Dictionary After" />
-2. Search for terms using **Spotlight**<br><img src="tutorial-images/spotlight.png" alt="Spotlight Search results" />
-3. <code>Right-click</code> terms and select **Look Up** in the context menu<br><img src="tutorial-images/look-up.png" alt="'Look Up' command" /><br><img src="tutorial-images/look-up-window.png" alt="'Look Up' window" />
 
 ## CHANGE LOG
 ##### Jan 20, 2020 - <code>v1.1 published</code>
