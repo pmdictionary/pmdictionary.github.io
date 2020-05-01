@@ -39,7 +39,7 @@ header img {display:block;margin:0 auto 40px;width:100%;max-width:unset;}
 
 nav {background-color:black;font-size:22px;text-align:center;}
 nav a {color:white;display:inline-block;font-weight:bold;padding:10px;}
-nav a:hover {color:var(--brand);text-decoration:none;}
+nav a:hover, nav a.active {color:var(--brand);text-decoration:none;}
 @media (min-width:768px){nav {position:-webkit-sticky;position:sticky;top:0;z-index:1;}}
 
 footer {background-color:black;color:white;}
@@ -68,7 +68,7 @@ footer a, footer a:hover {color:var(--brand);}
 	<nav class="row row-cols-1 row-cols-md-4 justify-content-around">
 		<div class="d-none d-md-inline-block col-md-1"></div>
 		<a class="col col-md-auto" href="index.html#download">Download</a>
-		<a class="col col-md-auto" href="#setup">Setup</a>
+		<a class="col col-md-auto active" href="#setup">Setup</a>
 		<a class="col col-md-auto" href="index.html#contribute">Contribute</a>
 		<a class="col col-md-auto" href="index.html#about">About</a>
 		<div class="d-none d-md-inline-block col-md-1"></div>
