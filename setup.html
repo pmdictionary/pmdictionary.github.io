@@ -31,16 +31,22 @@ a.dark, a.dark:hover {color:black;font-weight:bold;}
 img {max-width:100%;border-radius:5px;}
 img.shadow {box-shadow:0 6px 23px 0px rgba(0,0,0,0.35)!important;}
 
+code {background-color:white;border-radius:2px;display:inline-block;font-size:0.8em;padding:1px 4px;margin:0 1px;}
+
 .highlight {background-color:var(--brand);color:black;}
 
 header {background-color:var(--brand);color:black;padding:130px 10% 80px;text-align:center;}
 header .col {margin:0 auto;max-width:800px;}
-header img {display:block;margin:0 auto 40px;width:100%;max-width:unset;}
+header img {display:block;margin:0 auto 40px;width:100%;}
 
 nav {background-color:black;font-size:22px;text-align:center;}
 nav a {color:white;display:inline-block;font-weight:bold;padding:10px;}
 nav a:hover, nav a.active {color:var(--brand);text-decoration:none;}
 @media (min-width:768px){nav {position:-webkit-sticky;position:sticky;top:0;z-index:1;}}
+
+.step {border-bottom:2px solid var(--soft-bg);}
+.step:last-child {border-bottom:none;}
+aside.col img {border:1px solid var(--soft-bg);width:100%;}
 
 footer {background-color:black;color:white;}
 footer a, footer a:hover {color:var(--brand);}
@@ -57,7 +63,6 @@ footer a, footer a:hover {color:var(--brand);}
 #setup {background:var(--soft-bg);position:relative;}
 #setup h2 {text-align:left;}
 
-#uninstall code {background-color:white;border-radius:2px;display:inline-block;font-size:0.8em;padding:1px 4px;margin:0 1px;}
 </style>
 </head>
 <body class="container-fluid">
@@ -83,11 +88,10 @@ footer a, footer a:hover {color:var(--brand);}
 			<p>Instructions for <a href="#uninstall">upgrading or removing</a> the dictionary are at the bottom of the page.</p>
 		</div>
 	</section>
-	<section id="install">
-		<div class="row highlight py-4">
-			<h2 class="col-12 py-5 mb-0">Installing the Dictionary</h2>
-		</div>
-
+	<section class="row highlight py-4">
+		<h2 class="col-12 py-5 mb-0">Installing the Dictionary</h2>
+	</section>
+	<section id="install" class="container-lg">
 		<div class="row py-4 step align-items-center">
 			<h4 class="col-12 col-sm-auto mb-sm-0">Step 1</h4>
 			<div class="col-12 col-sm-9">
@@ -162,14 +166,13 @@ footer a, footer a:hover {color:var(--brand);}
 				<p class="mb-sm-0">You can now close the <strong>Preferences</strong>, <strong>Dictionary</strong>, and <strong>Finder</strong> windows</p>
 			</div>
 		</div>
-
-		<div class="row highlight">
-			<h2 class="col-12 py-5 m-0">
-				<span class="d-block d-md-inline-block">🎉 🎊 🎉 🎊 🎉</span>
-				<span class="d-block d-md-inline-block my-4 my-md-0 mx-md-4">Finished</span>
-				<span class="d-block d-md-inline-block">🎉 🎊 🎉 🎊 🎉</span>
-			</h2>
-		</div>
+	</section>
+	<section class="row highlight">
+		<h2 class="col-12 py-5 m-0">
+			<span class="d-block d-md-inline-block">🎉 🎊 🎉 🎊 🎉</span>
+			<span class="d-block d-md-inline-block my-4 my-md-0 mx-md-4">Finished</span>
+			<span class="d-block d-md-inline-block">🎉 🎊 🎉 🎊 🎉</span>
+		</h2>
 	</section>
 	<section id="uninstall" class="row py-5">
 		<h2 class="col-12 py-3">Upgrades &amp; Removal</h2>
@@ -179,9 +182,9 @@ footer a, footer a:hover {color:var(--brand);}
 			<p><strong>Removing the dictionary</strong>:<br />Just open the '<strong>Dictionaries</strong>' folder on your computer (see <a href="#installation" class="dark">Steps 2 & 3</a> above), select the file called <code>PM Reference.dictionary</code> and either drag it to the trash or <code>right-click</code> and select <code>Move to Trash</code>.</p>
 			<p><strong>Upgrading the dictionary</strong>:<br />Follow the 'Removing the dictionary' steps above to remove your old version, then <a href="index.html#download" class="dark">download the new version</a>, and install it using <a href="#install" class="dark">the instructions</a> at the top of the page</p>
 		</div>
-		<div class="col">
+		<aside class="col">
 			<img src="tutorial-images/move-to-trash.png" alt="move to trash" />
-		</div>
+		</aside>
 	</section>
 	<footer class="row py-4 justify-content-between">
 		<div class="col-auto">

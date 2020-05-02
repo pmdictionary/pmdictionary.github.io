@@ -31,19 +31,22 @@ a.dark, a.dark:hover {color:black;font-weight:bold;}
 img {max-width:100%;border-radius:5px;}
 img.shadow {box-shadow:0 6px 23px 0px rgba(0,0,0,0.35)!important;}
 
+code {background-color:white;border-radius:2px;display:inline-block;font-size:0.8em;padding:1px 4px;margin:0 1px;}
+
 .highlight {background-color:var(--brand);color:black;}
 
 header {background-color:var(--brand);color:black;padding:130px 10% 80px;text-align:center;}
 header .col {margin:0 auto;max-width:800px;}
-header img {display:block;margin:0 auto 40px;width:100%;max-width:unset;}
+header img {display:block;margin:0 auto 40px;width:100%;}
 
 nav {background-color:black;font-size:22px;text-align:center;}
 nav a {color:white;display:inline-block;font-weight:bold;padding:10px;}
 nav a:hover, nav a.active {color:var(--brand);text-decoration:none;}
 @media (min-width:768px){nav {position:-webkit-sticky;position:sticky;top:0;z-index:1;}}
 
-.step {border-top:1px solid #aaa;}
-.step:nth-of-type(odd) {background-color:var(--soft-bg);}
+.step {border-bottom:2px solid var(--soft-bg);}
+.step:last-child {border-bottom:none;}
+aside.col img {border:1px solid var(--soft-bg);width:100%;}
 
 footer {background-color:black;color:white;}
 footer a, footer a:hover {color:var(--brand);}
@@ -62,10 +65,6 @@ footer a, footer a:hover {color:var(--brand);}
 @media (min-width:768px){#download .img {background-position:center;position:static;}}
 #apple-logo {margin-right:.65rem;}
 
-#usage img {max-width:100%;}
-
-#contributing {}
-
 #about {background-color:var(--soft-bg);}
 </style>
 </head>
@@ -82,29 +81,41 @@ footer a, footer a:hover {color:var(--brand);}
 		<a class="col col-md-auto" href="#about">About</a>
 		<div class="d-none d-md-inline-block col-md-1"></div>
 	</nav>
-	<section id="download" class="row justify-content-center py-5">
-		<div class="img col-md-4 col-lg-3 py-4 py-md-5"><!-- zip folder icon --></div>
-		<div class="col-11 col-sm-10 col-md-6 col-lg-5 py-4 py-md-5">
-			<h3>Download The Dictionary</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+	<section id="download" class="row justify-content-center pt-5 pb-3">
+		<div class="col-8 offset-3 col-lg-9 offset-lg-2 pl-4 pl-lg-0 py-3">
+			<h2>Download The Dictionary</h2>
+		</div>
+		<div class="img col-md-4 col-lg-3"><!-- zip folder icon --></div>
+		<div class="col-11 col-sm-10 col-md-6 col-lg-8"><div class="row">
+			<div class="col-12 col-lg-6 mt-lg-3">
+				<div id="releaseInfo d-none">
+					<p><strong>Latest Release:</strong> <a href="about.html#changes"><span class="release">see change-log</span></a></p>
+					<p><strong>Published:</strong> <span class="published">see change-log</span></p>
+				</div>
 
-			<div id="releaseInfo d-none">
-				<p><strong>Latest Release:</strong> <span class="release">see change-log</span></p>
-				<p><strong>Published:</strong> <span class="published">see change-log</span></p>
+				<a class="btn btn-warning btn-lg px-3" href="dictionary.zip" download="PM-Reference-Dictionary-v1.1.zip" aria-described-by><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download<span class="release"></span> for Mac</a><a id="legal" href="#disclaimer" class="ml-5 d-inline-block ml-lg-0 d-lg-block mt-lg-3 dark"><span class="d-none d-lg-inline">Copyright and </span>Legal<span class="d-none d-lg-inline"> Information</span><i class="far fa-angle-down ml-2" aria-label="show disclaimer"></i></a>
 			</div>
-
-			<a class="btn btn-warning btn-lg px-3" href="dictionary.zip" download="PM-Reference-Dictionary-v1.1.zip" aria-described-by><i id="apple-logo" class="fab fa-apple" aria-hidden="true"></i>Download<span class="release"></span> for Mac</a><a id="legal" href="#disclaimer" class="ml-5">Legal<i class="far fa-angle-down ml-2" aria-label="show disclaimer"></i></a>
-		</div>
+			<div class="col-12 col-lg-6">
+				<h5 class="mt-5 mt-lg-3">Dictionary <span class="release">Latest release</span> enhancements:</h5>
+				<ul>
+					<li>Adds support for alternate terms</li>
+					<li>Adds support for acronyms</li>
+					<li>Lists alternate terms & acronyms under entry heading</li>
+					<li>Improves typography & layout in dictionary entries</li>
+					<li>Minor improvements to some definitions</li>
+					<li>Cross-links additional terms (especially <a href="x-dictionary:r:scrum" class="dark">Scrum</a>)</li>
+				</ul>
+			</div>
+		</div></div>
 	</section>
-		<section id="usage">
-		<div class="row highlight py-4">
-			<h2 class="col-12"><b class="fa-2x d-block" aria-hidden="true">🤓</b>Usage Instructions</h2>
-		</div>
-
+	<section class="row highlight py-4">
+		<h2 class="col-12"><b class="fa-2x d-block" aria-hidden="true">🤓</b>Usage Instructions</h2>
+	</section>
+	<section id="usage" class="container-lg">
 		<div class="row py-4 step">
 			<h4 class="col-12 col-sm-auto">1.</h4>
 			<div class="col-12 col-sm-5">
-				<p>Look up terms in the <a href="x-dictionary:r:PM" class="dark">Dictionary</a> app</p>
+				<p>Look up terms in the <a href="x-dictionary:r:agile" class="dark">Dictionary</a> app</p>
 			</div>
 			<aside class="col pr-md-4">
 				<img src="tutorial-images/dictionary-after.jpg" alt="Dictionary After" />
@@ -127,31 +138,46 @@ footer a, footer a:hover {color:var(--brand);}
 				<p><code>Right-click</code> terms and select <strong>Look Up</strong> in the context menu</p>
 			</div>
 			<aside class="col pr-md-4">
-				<img src="tutorial-images/look-up.png" alt="'Look Up' command" />
+				<img src="tutorial-images/look-up.png" class="mb-4" alt="'Look Up' command" />
 				<img src="tutorial-images/look-up-window.png" alt="'Look Up' window" />
 			</aside>
 		</div>
 	</section>
-	<section id="contribute" class="row py-5 highlight justify-content-around">
-		<h2 class="col-12 mb-5">Contributing to the Dictionary</h2>
-		<div class="col-12 col-md-5">
-			<h4>New terms</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
-		<div class="col-12 col-md-5">
-			<h4>Corrections</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-		</div>
+	<section id="contribute" class="row highlight"><div class="col"><div class="container-lg">
+		<div class="row py-5 justify-content-around">
+			<h2 class="col-12 mb-4">Contributing to the Dictionary</h2>
+			<div class="col-11 col-md-5">
+				<h4>New terms &amp; Corrections</h4>
+				<p>We try to keep the terms accurate and up-to-date. If you see a mistake or discover a term you think we should include, feel free to <a href="https://github.com/pmdictionary/pmdictionary.github.io/issues/new" target="_blank" class="dark">file a ticket</a> for us to review.</p>
+				<p>You can help us accelerate our release schedule by including reference links for supporting articles or definitions in your tickets.</p>
+			</div>
+			<div class="col-11 col-md-5">
+				<h4>Organizing Issues</h4>
+				<p>We have <code>Labels</code> set up for:</p>
+				<ul>
+					<li>New terms</li>
+					<li>Duplicate terms</li>
+					<li>Inaccurate terms</li>
+					<li>Feature requests</li>
+				</ul>
+				<a href="https://github.com/pmdictionary/pmdictionary.github.io/issues/new" target="_blank" class="btn btn-light">File a ticket</a>
+			</div>
+		</div></div></div>
 	</section>
-	<section id="about" class="row py-5 justify-content-around">
-		<h2 class="col-12">About</h2>
-		<div class="col-11">
-			<h4>Acknowledgments</h4>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-			<h4 id="disclaimer">Legal Disclaimers</h4>
-			<p>This software released under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">CC-BY-NC-ND 4.0 International License</a> and is offered free of charge and without warranties of any kind.</p>
-			<p>By downloading, using, or sharing this utility, you agree to indemnify, defend and hold harmless Honor Software, its officers, directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable attorneys' fees) relating to or arising out of your use of or inability to use this site and any product or services offered.</p>
-		</div>
+	<section id="about" class="row"><div class="col"><div class="container-lg">
+		<div class="row py-5 justify-content-around">
+			<h2 class="col-12 mb-4">About</h2>
+			<div class="col-11 col-md-5">
+				<h4>Acknowledgments</h4>
+				<p>We're grateful to <a href="https://www.linkedin.com/in/sugarcoder/" target="_blank" class="dark">Madalyn Chea</a> who produced a spreadsheet of terms that was the inspiration for this project.</p>
+				<p>We would also like to thank <a href="https://www.linkedin.com/in/indiver/" target="_blank" class="dark">Indy Nagpal</a> for his excellent <a href="http://blog.nagpals.com/mac-dictionaries/" target="_blank" class="dark">blog about Mac dictionaries</a>.</p>
+			</div>
+			<div class="col-11 col-md-5">
+				<h4 id="disclaimer">Legal Disclaimers</h4>
+				<p>This software released under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" class="dark">CC-BY-NC-ND 4.0 International License</a> and is offered free of charge and without warranties of any kind.</p>
+				<p>By downloading, using, or sharing this utility, you agree to indemnify, defend and hold harmless Honor Software, its officers, directors, employees, agents and third parties, for any losses, costs, liabilities and expenses (including reasonable attorneys' fees) relating to or arising out of your use of or inability to use this site and any product or services offered.</p>
+			</div>
+		</div></div></div>
 	</section>
 	<footer class="row py-4 justify-content-between">
 		<div class="col-auto">
